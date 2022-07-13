@@ -1,0 +1,345 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body {
+    /* padding: 10vh 35vh 10vh 35vh; */
+    position: absolute;
+    background-color: black;
+    width: 100%;
+    height: auto
+}
+
+.token_title {
+    color: black;
+    text-align: center;
+    /* width: 100%; */
+    background-color: white;
+    padding: 100px 100px;
+}
+
+.container {
+    text-align: center;
+    margin: 100px 30px 40px 30px;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    position: static;
+    position: relative
+}
+
+.container .sushi__title {
+    font-size: 15px;
+    color: black
+}
+
+.container .sushi__address {
+    font-size: 10px;
+    margin-top: 5px;
+    color: black;
+    /* position: relative; */
+}
+
+.qr_code {
+    height: 20px;
+    width: 20px;
+    background-color: red;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-image: url(https://www.bing.com/th?id=OIP.sIdBdMXABbKRAVrBRtFkJgHaHS&w=252&h=247&c=8&rs=1&qlt=90&o=6&dpr=1.25&pid=3.1&rm=2);
+    background-position: center;
+    background-size: cover;
+}
+
+.qr_code:hover {
+    cursor: pointer
+}
+
+@media(max-width:280px) {
+    .container .sushi__address {
+        font-size: 7px;
+        margin-top: 5px;
+        color: black;
+        position: relative;
+    }
+    .tag_value {
+        text-overflow: ellipsis;
+        position: relative;
+    }
+    .transaction_value {
+        position: relative;
+        left: 0px;
+        /* background-color: #0f0f0f; */
+        font-size: 12px;
+    }
+}
+
+.table_title,
+.sub_title,
+.tag,
+.tag_value {
+    color: white
+}
+
+.sub_title {
+    display: flex;
+    align-items: center;
+    padding: 10px 10px;
+    background-color: #202020
+}
+
+tr {
+    cursor: pointer;
+}
+
+.tag_value {
+    position: relative;
+    left: 69px
+}
+
+.transaction_value {
+    position: relative;
+    left: 0px;
+    /* background-color: #0f0f0f; */
+    font-size: 13px;
+}
+
+.transaction_bg {
+    background-color: #0f0f0f;
+}
+
+.table_title {
+    background-color: #ffffff;
+    padding: 10px 10px;
+    color: #202020;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+.tables {
+    margin: 1px 30px 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+}
+
+.decimal {
+    position: relative;
+    left: 69px
+}
+
+.transfer {
+    position: relative;
+    left: 63px
+}
+
+.holder {
+    position: relative;
+    left: 85px
+}
+
+.tx_value {
+    position: relative;
+    left: 30px;
+}
+
+.supply {
+    left: 38px;
+    /* background-color: #0f0f0f; */
+    font-size: 16px;
+}
+
+.contract_info {
+    width: 48%;
+    position: static
+}
+
+@media (max-width:361px) {
+    .custom_value {
+        font-size: 12px
+    }
+    .supply {
+        /* left: 38px;
+            background-color: #0f0f0f; */
+        font-size: 13px;
+    }
+}
+
+@media (max-width:386px) {
+    .custom_value {
+        font-size: 12px
+    }
+}
+
+@media (max-width:417px) {
+    /* .custom_value {
+        font-size: 12px
+    } */
+    .supply {
+        left: 40px;
+        /* background-color: #0f0f0f; */
+        font-size: 16px;
+    }
+    .tx_value {
+        position: relative;
+        left: 30px;
+    }
+}
+
+
+/* @media (max-width:414px) { */
+
+
+/* .custom_value {
+        font-size: 12px
+    } */
+
+
+/* .supply {
+        left: 40px;
+        background-color: #0f0f0f;
+        font-size: 16px;
+    }
+    .tx_value {
+        position: relative;
+        left: 30px;
+    }
+} */
+
+@media (max-width:766px) {
+    .info_table {
+        margin-top: 30px;
+    }
+    .tables {
+        margin: 1px 30px 10px 30px;
+        display: flex;
+        /* justify-content: space-between; */
+        flex-direction: column;
+    }
+    .contract_info {
+        width: 100%;
+        /* position: static */
+    }
+}
+
+th,
+tr,
+li {
+    color: white;
+    text-align: left;
+    list-style: none;
+    font-size: 13px;
+}
+
+td,
+th {
+    /* border: 1px solid #dddddd; */
+    text-align: left;
+    padding: 8px;
+    /* padding-left: 60px; */
+    /* width: 33% */
+}
+
+table {
+    /* font-family: arial, sans-serif; */
+    border-collapse: collapse;
+    width: 100%;
+    /* position: static; */
+    /* display: flex;
+    flex-direction: row; */
+}
+
+.list {
+    width: 5%
+}
+
+.removeable {
+    display: none
+}
+
+
+/* .address {
+    width: 50%
+} */
+
+.historical_data {
+    margin: 10px 30px 50px 30px;
+}
+
+tr:nth-child(even) {
+    background-color: #202020;
+}
+
+tr:nth-child(odd) {
+    background-color: #0f0f0f;
+}
+
+.list-item {
+    display: block;
+}
+
+@media(max-width:430px) {
+    .list {
+        display: none
+    }
+    /* .address {
+        width: 100%
+    } */
+    /* table {
+        position: relative
+    } */
+    th,
+    tr,
+    li {
+        color: white;
+        text-align: left;
+        list-style: none;
+        font-size: 8px;
+    }
+    .sushi_value {
+        font-size: 15px;
+    }
+    tr {
+        display: flex;
+        flex-direction: column;
+    }
+    .removeable {
+        display: contents
+    }
+}
+
+@media(max-width:430px) {
+    .list {
+        display: none
+    }
+    /* .address {
+        width: 100%
+    } */
+    /* table {
+        position: relative
+    } */
+    th,
+    tr,
+    li {
+        color: white;
+        text-align: left;
+        list-style: none;
+        font-size: 8px;
+    }
+    .tx_time {
+        font-size: 10px;
+    }
+    /* .sushi_value {
+        font-size: 15px;
+    }
+    tr {
+        display: flex;
+        flex-direction: column;
+    } */
+    /* .removeable {
+        display: contents
+    } */
+}
