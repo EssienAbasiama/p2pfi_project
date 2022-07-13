@@ -84,6 +84,10 @@
     color: white
 }
 
+.table_title {
+    display: flex;
+}
+
 .sub_title {
     display: flex;
     align-items: center;
@@ -117,6 +121,8 @@ tr {
     color: #202020;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
+    display: flex;
+    justify-content: space-between;
 }
 
 .tables {
@@ -279,6 +285,18 @@ tr:nth-child(odd) {
 
 .list-item {
     display: block;
+}
+
+.etherscan {
+    text-decoration: none;
+    color: rgb(42, 42, 42);
+    font-size: 15px;
+    transition: all 500ms;
+}
+
+.etherscan:hover {
+    color: red;
+    font-size: 13px;
 }
 
 @media(max-width:430px) {
