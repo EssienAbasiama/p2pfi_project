@@ -1,55 +1,21 @@
 import React from "react";
 import "./../styles/transaction.css";
 import { useEthers, useEtherBalance, Mainnet } from "@usedapp/core";
-//import { gql, ApolloClient, InMemoryCache } from "@apollo/client";
+import { gql, ApolloClient, InMemoryCache } from "@apollo/client";
 import "./../styles/header.css";
 import { formatEther } from "@ethersproject/units";
 import Default from "./Default";
-import {useQuery, gql} from "@apollo/client";
+import { useToken } from "../hooks/useToken";
 
 const Transaction_list = () => {
   const { activateBrowserWallet, account, deactivate } = useEthers();
   const etherscan = "https://etherscan.io/address/";
   const mainnetBalance = useEtherBalance(account, { chainId: Mainnet.chainId });
-  // const [sushiInfo, setSushiInfo] = useState("");
-
-  // const APIURL =
-  //   "https://gateway.thegraph.com/api/7035b37f7fc0499175f884193d50f5d9/subgraphs/id/D7azkFFPFT5H8i32ApXLr34UQyBfxDAfKoCEK4M832M6";
-
-  const TOKEN_QUERY = gql`
-    query{
-      token(id: "0x6b3595068778dd592e39a122f4f5a5cf09c90fe2") {
-        id: id
-        name
-        symbol
-        totalSupply
-        decimals
-      }
-    }
-  `;
-  // const client = new ApolloClient({
-  //   uri: APIURL,
-  //   cache: new InMemoryCache(),
-  // });
-  // console.log("clientTest", client);
-  // console.log(
-  //   "client",
-  //   client.query({
-  //     query: TOKEN_QUERY,
-  //   })
-  // );
-  // client
-  //   .query({
-  //     query: TOKEN_QUERY,
-  //   })
-  //   .then((data) => console.log("Subgraph data: ", data))
-  //   .catch((err) => {
-  //     console.log("Error fetching data: ", err);
-  //   });
-  // const { error, data, loading } = useQuery(GET_TOKEN);
-  // console.log({ error, loading, data });
- const obj = useQuery(TOKEN_QUERY);
-  console.log(obj);
+  const { error, loading, data } = useToken();
+  const result = { data };
+   console.log(result);
+  console.log(result.data.token.name);
+  
   return (
     <div>
       <div className="header">
@@ -124,20 +90,22 @@ const Transaction_list = () => {
               </div>{" "}
             </div>{" "}
             <div className="contract_info info_table">
-              <div className="table_title"></div>{" "}
+              <div className="table_title">{result.data.token.name}</div>{" "}
               <div className="sub_title transaction_bg">
                 <div className="tag"> Symbol </div>{" "}
-                <div className="tag_value"> SLP </div>{" "}
+                <div className="tag_value">{result.data.token.symbol}</div>{" "}
               </div>{" "}
               <div className="sub_title">
                 <div className="tag"> Total Supply </div>{" "}
                 <div className="tag_value transaction_value supply">
-                  21, 229.645748275787{" "}
+                  {result.data.token.totalSupply}
                 </div>{" "}
               </div>{" "}
               <div className="sub_title transaction_bg">
                 <div className="tag"> Decimal </div>{" "}
-                <div className="tag_value decimal"> 18 </div>{" "}
+                <div className="tag_value decimal">
+                  {result.data.token.decimals}
+                </div>{" "}
               </div>{" "}
               <div className="sub_title">
                 <div className="tag"> Transfers </div>{" "}
