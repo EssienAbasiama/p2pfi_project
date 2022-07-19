@@ -5,7 +5,7 @@ import App from "./App";
 import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
 
 const APIURL =
-  "https://gateway.thegraph.com/api/0602c914ae0cd1e71626af7ffa8f698b/subgraphs/id/D7azkFFPFT5H8i32ApXLr34UQyBfxDAfKoCEK4M832M6";
+  "https://gateway.thegraph.com/api/ac8c3bb878a5e4809497f061664312e8/subgraphs/id/D7azkFFPFT5H8i32ApXLr34UQyBfxDAfKoCEK4M832M6";
 
 const client = new ApolloClient({
   uri: APIURL,

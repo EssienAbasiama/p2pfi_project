@@ -19,6 +19,5 @@ export const useToken = () => {
         error,
         data,
         loading
-
-    };
+    }
 }

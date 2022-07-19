@@ -1,9 +1,7 @@
 import "./App.css";
 import TransactionList from "./component/Transaction_list";
 import { DAppProvider, Mainnet } from "@usedapp/core";
-import Test from "./component/Test";
-import { getDefaultProvider } from "ethers";
-// import { useState, useEffect } from "react";
+// import Test from "./component/Test";
 
 function App() {
   const config = {
@@ -22,8 +20,7 @@ function App() {
   return (
     <DAppProvider config={config}>
       <div className="App">
-        <TransactionList />
-        {/* <Test/> */}
+        <TransactionList/>
       </div>
     </DAppProvider>
   );
